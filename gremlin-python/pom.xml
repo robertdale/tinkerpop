@@ -34,7 +34,7 @@ limitations under the License.
         <dependency>
             <groupId>org.python</groupId>
             <artifactId>jython-standalone</artifactId>
-            <version>2.7.1b2</version>
+            <version>2.7.1</version>
         </dependency>
         <!-- TESTING -->
         <dependency>
@@ -311,28 +311,22 @@ limitations under the License.
                                         <copy todir="${project.build.directory}/python-packaged">
                                             <fileset dir="src/main/jython"/>
                                         </copy>
-                                        <exec dir="${project.build.directory}/python2" executable="virtualenv"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python2" executable="virtualenv" failonerror="true">
                                             <arg line="--python=python2 env"/>
                                         </exec>
-                                        <exec dir="${project.build.directory}/python2" executable="env/bin/pip"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python2" executable="env/bin/pip" failonerror="true">
                                             <arg line="install wheel radish-bdd PyHamcrest aenum"/>
                                         </exec>
-                                        <exec dir="${project.build.directory}/python3" executable="virtualenv"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python3" executable="virtualenv" failonerror="true">
                                             <arg line="--python=python3 env"/>
                                         </exec>
-                                        <exec dir="${project.build.directory}/python3" executable="env/bin/pip"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python3" executable="env/bin/pip" failonerror="true">
                                             <arg line="install wheel radish-bdd PyHamcrest aenum"/>
                                         </exec>
-                                        <exec dir="${project.build.directory}/python-packaged" executable="virtualenv"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python-packaged" executable="virtualenv" failonerror="true">
                                             <arg line="--python=python3 env"/>
                                         </exec>
-                                        <exec dir="${project.build.directory}/python-packaged" executable="env/bin/pip"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python-packaged" executable="env/bin/pip" failonerror="true">
                                             <arg line="install wheel"/>
                                         </exec>
                                     </tasks>
@@ -346,8 +340,7 @@ limitations under the License.
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <exec executable="env/bin/python" dir="${project.build.directory}/python2"
-                                              failonerror="true">
+                                        <exec executable="env/bin/python" dir="${project.build.directory}/python2" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <!-- oddly the "build-lib" needs to be in place or else docs won't generate -->
                                             <arg line="setup.py build --build-lib ${project.build.outputDirectory}/Lib"/>
@@ -363,8 +356,7 @@ limitations under the License.
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <exec executable="env/bin/python" dir="${project.build.directory}/python3"
-                                              failonerror="true">
+                                        <exec executable="env/bin/python" dir="${project.build.directory}/python3" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <arg line="setup.py build --build-lib ${project.build.outputDirectory}/Lib"/>
                                         </exec>
@@ -385,8 +377,7 @@ limitations under the License.
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <exec executable="env/bin/python" dir="${project.build.directory}/python-packaged"
-                                              failonerror="true">
+                                        <exec executable="env/bin/python" dir="${project.build.directory}/python-packaged" failonerror="true">
                                             <env key="VERSION" value="${project.version}"/>
                                             <env key="PYTHONPATH" value=""/>
                                             <arg line="setup.py sdist bdist_wheel"/>
@@ -409,27 +400,23 @@ limitations under the License.
                                 <configuration>
                                     <skip>${skipTests}</skip>
                                     <target>
-                                        <exec executable="env/bin/python" dir="${project.build.directory}/python2"
-                                              failonerror="true">
+                                        <exec executable="env/bin/python" dir="${project.build.directory}/python2" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <arg line="setup.py test"/>
                                         </exec>
                                         <!-- radish seems to like all dependencies in place -->
-                                        <exec executable="env/bin/python" dir="${project.build.directory}/python2"
-                                              failonerror="true">
+                                        <exec executable="env/bin/python" dir="${project.build.directory}/python2" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <arg line="setup.py install"/>
                                         </exec>
                                         <!-- run for graphson 3.0 -->
-                                        <exec executable="env/bin/radish" dir="${project.build.directory}/python2"
-                                              failonerror="true">
+                                        <exec executable="env/bin/radish" dir="${project.build.directory}/python2" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <env key="PYTHONIOENCODING" value="utf-8:surrogateescape"/>
                                             <arg line="-e -t -b ${project.build.directory}/python2/radish ${project.basedir}/../gremlin-test/features/ --user-data=&quot;graphson=v2&quot;"/> <!-- -no-line-jump -->
                                         </exec>
                                         <!-- run for graphson 3.0 -->
-                                        <exec executable="env/bin/radish" dir="${project.build.directory}/python2"
-                                              failonerror="true">
+                                        <exec executable="env/bin/radish" dir="${project.build.directory}/python2" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <env key="PYTHONIOENCODING" value="utf-8:surrogateescape"/>
                                             <arg line="-e -t -b ${project.build.directory}/python2/radish ${project.basedir}/../gremlin-test/features/ --user-data=&quot;graphson=v3&quot;"/> <!-- -no-line-jump -->
@@ -446,8 +433,7 @@ limitations under the License.
                                 <configuration>
                                     <skip>${skipTests}</skip>
                                     <target>
-                                        <exec executable="env/bin/python" dir="${project.build.directory}/python3"
-                                              failonerror="true">
+                                        <exec executable="env/bin/python" dir="${project.build.directory}/python3" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <arg line="setup.py test"/>
                                         </exec>
@@ -600,13 +586,11 @@ limitations under the License.
                                 </goals>
                                 <configuration>
                                     <tasks>
-                                        <exec dir="${project.build.directory}/python-packaged" executable="env/bin/pip"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python-packaged" executable="env/bin/pip" failonerror="true">
                                             <arg line="install twine"/>
                                         </exec>
                                         <!-- to use the pypi test environment add: -r pypitest -->
-                                        <exec dir="${project.build.directory}/python-packaged" executable="env/bin/twine"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python-packaged" executable="env/bin/twine" failonerror="true">
                                             <arg line="upload dist/* -r pypi -s "/>
                                         </exec>
                                     </tasks>
