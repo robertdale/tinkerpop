@@ -153,7 +153,7 @@ limitations under the License.
         <commons.lang.version>2.6</commons.lang.version>
         <commons.lang3.version>3.8.1</commons.lang3.version>
         <groovy.version>2.5.6</groovy.version>
-        <hadoop.version>2.7.2</hadoop.version>
+        <hadoop.version>2.7.7</hadoop.version>
         <java.tuples.version>1.2</java.tuples.version>
         <javadoc-plugin.version>2.10.4</javadoc-plugin.version>
         <jcabi.version>1.1</jcabi.version>
@@ -584,7 +584,7 @@ limitations under the License.
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>1.7.0</version>
+                    <version>1.6</version>
                     <configuration>
                         <targetBytecode>1.8</targetBytecode>
                         <invokeDynamic>true</invokeDynamic>
