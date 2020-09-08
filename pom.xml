@@ -146,7 +146,7 @@ limitations under the License.
         <url>https://github.com/apache/tinkerpop</url>
     </scm>
     <properties>
-        <commons.configuration.version>2.6</commons.configuration.version>
+        <commons.configuration.version>2.7</commons.configuration.version>
         <commons.lang.version>2.6</commons.lang.version>
         <commons.lang3.version>3.8.1</commons.lang3.version>
         <groovy.version>2.5.11</groovy.version>
@@ -158,7 +158,7 @@ limitations under the License.
         <metrics.version>3.0.2</metrics.version>
         <netty.version>4.1.49.Final</netty.version>
         <slf4j.version>1.7.25</slf4j.version>
-        <snakeyaml.version>1.15</snakeyaml.version>
+        <snakeyaml.version>1.26</snakeyaml.version>
         <spark.version>2.4.0</spark.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
