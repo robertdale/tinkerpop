@@ -132,7 +132,7 @@ limitations under the License.
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
-            <version>1.19</version>
+            <version>1.26.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -162,7 +162,7 @@ limitations under the License.
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
-            <version>1.19</version>
+            <version>1.26.0</version>
         </dependency>
         <!-- TEST -->
         <dependency>
@@ -259,7 +259,8 @@ limitations under the License.
                                 <requireEnvironmentVariable>
                                      <level>WARN</level>
                                      <variableName>HADOOP_GREMLIN_LIBS</variableName>
-                                     <message>Please set HADOOP_GREMLIN_LIBS OS environment variable as of http://tinkerpop.apache.org/docs/current/reference/#hadoop-gremlin&#x000A;HADOOP_GREMLIN_LIBS=&lt;hadoop installation dir&gt;/share/hadoop/common/lib seems good enough
+                                     <message>Please set HADOOP_GREMLIN_LIBS OS environment variable as of http://tinkerpop.apache.org/docs/current/reference/#hadoop-gremlin
+HADOOP_GREMLIN_LIBS=&lt;hadoop installation dir&gt;/share/hadoop/common/lib seems good enough
                                      </message>
                                 </requireEnvironmentVariable>
                             </rules>
